@@ -1,8 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 
 function List() {
+
+    const fetchItems = async () => {
+        try {
+            //const res = await axios.get("http://localhost:5000/items");
+            const res = await fetch("http://localhost:5000/items");
+            //const jsonData = await res.Json();
+            console.log(res);
+            
+        } catch (err) {
+            console.error(err.message);
+        }
+    };
+    useEffect(() => {
+		// Trigger the API Call
+		fetchItems();
+	});
+
   return (
     <div className="container pt-3">
         <div className="card pt-3">

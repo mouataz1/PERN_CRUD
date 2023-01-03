@@ -19,7 +19,7 @@ function Create() {
                 "image": image
             }
             const res = await axios.post("http://localhost:5000/items", body);
-            if(res.status == 200){
+            if(res.status === 200){
                 //alert("item created successfully");
                 navigete("/");
             }
